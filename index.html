@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Faberx — AI Operations for UK SMEs. We document your processes, build SOPs your team owns, and layer AI and automation on top." />
   <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0D0E11" />
   <title>Faberx — AI Operations for UK SMEs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     /* ─── Reset ─────────────────────────────────────────────── */
     *, *::before, *::after {
@@ -16,23 +20,18 @@
 
     /* ─── Tokens ─────────────────────────────────────────────── */
     :root {
-      --bg:        #F5F1EB;
-      --fg:        #1A1A1A;
-      --fg-muted:  #5A5A5A;
-      --border:    #D6D0C8;
-      --accent:    #1A1A1A;
+      --bg:          #0D0E11;
+      --surface:     #16181D;
+      --fg:          #F0F0F2;
+      --fg-body:     rgba(240, 240, 242, 0.9);
+      --fg-muted:    #64666E;
+      --accent:      #6366F1;
+      --accent-hover:#4F46E5;
+      --border:      #2A2B32;
 
-      --font-serif: Georgia, 'Times New Roman', Times, serif;
-      --font-sans:  'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --font: 'DM Sans', 'Inter', 'Helvetica Neue', Arial, sans-serif;
 
-      --space-xs:  0.5rem;
-      --space-sm:  1rem;
-      --space-md:  2rem;
-      --space-lg:  4rem;
-      --space-xl:  6rem;
-
-      --max-w: 680px;
-      --line-h: 1.65;
+      --max-w:       800px;
     }
 
     /* ─── Base ───────────────────────────────────────────────── */
@@ -44,8 +43,8 @@
     body {
       background-color: var(--bg);
       color: var(--fg);
-      font-family: var(--font-sans);
-      line-height: var(--line-h);
+      font-family: var(--font);
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
@@ -55,12 +54,12 @@
       width: 100%;
       max-width: var(--max-w);
       margin: 0 auto;
-      padding: 0 var(--space-md);
+      padding: 0 32px;
     }
 
     /* ─── Header / Nav ───────────────────────────────────────── */
     header {
-      padding: var(--space-md) 0;
+      padding: 24px 0;
       border-bottom: 1px solid var(--border);
     }
 
@@ -71,151 +70,135 @@
     }
 
     .wordmark {
-      font-family: var(--font-serif);
+      font-family: var(--font);
       font-size: 1.125rem;
-      font-weight: normal;
-      letter-spacing: 0.04em;
+      font-weight: 600;
+      letter-spacing: -0.01em;
       color: var(--fg);
       text-decoration: none;
     }
 
     .header-label {
       font-size: 0.75rem;
-      letter-spacing: 0.12em;
+      font-weight: 500;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       color: var(--fg-muted);
     }
 
     /* ─── Hero ───────────────────────────────────────────────── */
     .hero {
-      padding: var(--space-xl) 0 var(--space-lg);
+      padding: 120px 0 64px;
     }
 
     .hero h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(3rem, 10vw, 5.5rem);
-      font-weight: normal;
-      line-height: 1;
+      font-family: var(--font);
+      font-size: clamp(36px, 8vw, 48px);
+      font-weight: 600;
+      line-height: 1.1;
       letter-spacing: -0.02em;
-      margin-bottom: var(--space-md);
+      color: var(--fg);
+      margin-bottom: 24px;
     }
 
     .hero .subhead {
-      font-size: clamp(1rem, 3vw, 1.25rem);
+      font-size: clamp(1rem, 2.5vw, 1.125rem);
+      font-weight: 400;
       color: var(--fg-muted);
-      letter-spacing: 0.01em;
-      margin-bottom: var(--space-lg);
-      max-width: 420px;
+      letter-spacing: 0;
+      margin-bottom: 48px;
+      max-width: 480px;
     }
 
+    /* ─── Primary Button ─────────────────────────────────────── */
     .btn {
       display: inline-block;
-      background-color: var(--fg);
-      color: var(--bg);
-      font-family: var(--font-sans);
+      background-color: var(--accent);
+      color: #ffffff;
+      font-family: var(--font);
       font-size: 0.875rem;
       font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      letter-spacing: 0;
       text-decoration: none;
-      padding: 0.875rem 2rem;
-      border: 1px solid var(--fg);
-      transition: background-color 0.15s ease, color 0.15s ease;
+      padding: 12px 24px;
+      border-radius: 4px;
+      border: none;
+      transition: background-color 0.2s ease;
       cursor: pointer;
     }
 
     .btn:hover,
     .btn:focus-visible {
-      background-color: transparent;
-      color: var(--fg);
-      outline: 2px solid var(--fg);
+      background-color: var(--accent-hover);
+      outline: 2px solid var(--accent);
       outline-offset: 2px;
-    }
-
-    /* ─── Divider ────────────────────────────────────────────── */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: var(--space-lg) 0;
     }
 
     /* ─── Sections ───────────────────────────────────────────── */
     section {
-      padding: var(--space-lg) 0;
+      padding: 120px 0;
       border-top: 1px solid var(--border);
     }
 
     .section-label {
-      font-size: 0.6875rem;
-      letter-spacing: 0.14em;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       color: var(--fg-muted);
-      margin-bottom: var(--space-md);
+      margin-bottom: 32px;
     }
 
     .body-text {
       font-size: 1rem;
-      line-height: 1.75;
-      color: var(--fg);
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--fg-body);
       max-width: 600px;
     }
 
-    /* ─── Case Study ─────────────────────────────────────────── */
-    .case-study-block {
-      margin-top: var(--space-md);
-      padding: var(--space-md);
-      border: 1px solid var(--border);
-      background-color: rgba(26, 26, 26, 0.03);
-    }
-
-    .case-study-block .case-label {
-      font-size: 0.6875rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--fg-muted);
-      margin-bottom: var(--space-xs);
-    }
-
-    .case-study-block p {
-      font-size: 0.9375rem;
-      line-height: 1.7;
+    /* ─── Impact block ───────────────────────────────────────── */
+    .impact-stat {
+      font-size: clamp(2rem, 6vw, 2.5rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
       color: var(--fg);
+      line-height: 1.2;
     }
 
     /* ─── Contact ────────────────────────────────────────────── */
     .contact-list {
       list-style: none;
-      margin-top: var(--space-sm);
+      margin-top: 0;
     }
 
     .contact-list li {
       font-size: 0.9375rem;
       color: var(--fg-muted);
-      margin-bottom: var(--space-xs);
+      margin-bottom: 16px;
     }
 
     .contact-list a {
-      color: var(--fg);
+      color: var(--accent);
       text-decoration: none;
-      border-bottom: 1px solid var(--border);
-      transition: border-color 0.15s ease;
+      transition: color 0.15s ease;
     }
 
     .contact-list a:hover,
     .contact-list a:focus-visible {
-      border-color: var(--fg);
+      color: var(--accent-hover);
+      text-decoration: underline;
       outline: none;
     }
 
     .contact-cta {
-      margin-top: var(--space-md);
+      margin-top: 32px;
     }
 
     /* ─── Footer ─────────────────────────────────────────────── */
     footer {
-      padding: var(--space-md) 0;
+      padding: 32px 0;
       border-top: 1px solid var(--border);
-      margin-top: var(--space-lg);
     }
 
     footer .container {
@@ -223,37 +206,49 @@
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: var(--space-xs);
+      gap: 8px;
     }
 
     .footer-text {
       font-size: 0.75rem;
       color: var(--fg-muted);
-      letter-spacing: 0.04em;
+      letter-spacing: 0.02em;
     }
 
     /* ─── Mobile ─────────────────────────────────────────────── */
-    @media (max-width: 480px) {
-      :root {
-        --space-lg: 3rem;
-        --space-xl: 4rem;
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 24px;
+      }
+
+      .hero {
+        padding: 80px 0 48px;
+      }
+
+      section {
+        padding: 80px 0;
       }
 
       header .container {
         flex-direction: column;
         align-items: flex-start;
-        gap: var(--space-xs);
+        gap: 8px;
       }
 
       footer .container {
         flex-direction: column;
         align-items: flex-start;
       }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
     }
 
     /* ─── Focus styles (accessibility) ──────────────────────── */
     :focus-visible {
-      outline: 2px solid var(--fg);
+      outline: 2px solid var(--accent);
       outline-offset: 3px;
     }
   </style>
