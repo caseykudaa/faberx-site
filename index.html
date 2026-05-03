@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Faberx — AI Operations for UK SMEs. We document your processes, build SOPs your team owns, and layer AI and automation on top." />
+  <meta name="robots" content="index, follow" />
+  <title>Faberx — AI Operations for UK SMEs</title>
+  <style>
+    /* ─── Reset ─────────────────────────────────────────────── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ─── Tokens ─────────────────────────────────────────────── */
+    :root {
+      --bg:        #F5F1EB;
+      --fg:        #1A1A1A;
+      --fg-muted:  #5A5A5A;
+      --border:    #D6D0C8;
+      --accent:    #1A1A1A;
+
+      --font-serif: Georgia, 'Times New Roman', Times, serif;
+      --font-sans:  'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+      --space-xs:  0.5rem;
+      --space-sm:  1rem;
+      --space-md:  2rem;
+      --space-lg:  4rem;
+      --space-xl:  6rem;
+
+      --max-w: 680px;
+      --line-h: 1.65;
+    }
+
+    /* ─── Base ───────────────────────────────────────────────── */
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-sans);
+      line-height: var(--line-h);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ─── Layout ─────────────────────────────────────────────── */
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    /* ─── Header / Nav ───────────────────────────────────────── */
+    header {
+      padding: var(--space-md) 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .wordmark {
+      font-family: var(--font-serif);
+      font-size: 1.125rem;
+      font-weight: normal;
+      letter-spacing: 0.04em;
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    .header-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+    }
+
+    /* ─── Hero ───────────────────────────────────────────────── */
+    .hero {
+      padding: var(--space-xl) 0 var(--space-lg);
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 10vw, 5.5rem);
+      font-weight: normal;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-md);
+    }
+
+    .hero .subhead {
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      color: var(--fg-muted);
+      letter-spacing: 0.01em;
+      margin-bottom: var(--space-lg);
+      max-width: 420px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--fg);
+      color: var(--bg);
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.875rem 2rem;
+      border: 1px solid var(--fg);
+      transition: background-color 0.15s ease, color 0.15s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      background-color: transparent;
+      color: var(--fg);
+      outline: 2px solid var(--fg);
+      outline-offset: 2px;
+    }
+
+    /* ─── Divider ────────────────────────────────────────────── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: var(--space-lg) 0;
+    }
+
+    /* ─── Sections ───────────────────────────────────────────── */
+    section {
+      padding: var(--space-lg) 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      margin-bottom: var(--space-md);
+    }
+
+    .body-text {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--fg);
+      max-width: 600px;
+    }
+
+    /* ─── Case Study ─────────────────────────────────────────── */
+    .case-study-block {
+      margin-top: var(--space-md);
+      padding: var(--space-md);
+      border: 1px solid var(--border);
+      background-color: rgba(26, 26, 26, 0.03);
+    }
+
+    .case-study-block .case-label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      margin-bottom: var(--space-xs);
+    }
+
+    .case-study-block p {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--fg);
+    }
+
+    /* ─── Contact ────────────────────────────────────────────── */
+    .contact-list {
+      list-style: none;
+      margin-top: var(--space-sm);
+    }
+
+    .contact-list li {
+      font-size: 0.9375rem;
+      color: var(--fg-muted);
+      margin-bottom: var(--space-xs);
+    }
+
+    .contact-list a {
+      color: var(--fg);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.15s ease;
+    }
+
+    .contact-list a:hover,
+    .contact-list a:focus-visible {
+      border-color: var(--fg);
+      outline: none;
+    }
+
+    .contact-cta {
+      margin-top: var(--space-md);
+    }
+
+    /* ─── Footer ─────────────────────────────────────────────── */
+    footer {
+      padding: var(--space-md) 0;
+      border-top: 1px solid var(--border);
+      margin-top: var(--space-lg);
+    }
+
+    footer .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+    }
+
+    .footer-text {
+      font-size: 0.75rem;
+      color: var(--fg-muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── Mobile ─────────────────────────────────────────────── */
+    @media (max-width: 480px) {
+      :root {
+        --space-lg: 3rem;
+        --space-xl: 4rem;
+      }
+
+      header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-xs);
+      }
+
+      footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* ─── Focus styles (accessibility) ──────────────────────── */
+    :focus-visible {
+      outline: 2px solid var(--fg);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Header ─────────────────────────────────────────────── -->
+  <header>
+    <div class="container">
+      <a href="/" class="wordmark" aria-label="Faberx home">faberx</a>
+      <span class="header-label">AI Operations</span>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ─── Hero ───────────────────────────────────────────────── -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <h1 id="hero-heading">faberx</h1>
+        <p class="subhead">AI Operations for UK SMEs</p>
+        <a
+          href="https://calendly.com/casey-faberx"
+          class="btn"
+          aria-label="Book a 15-minute discovery call with Casey Burke"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Book a 15-min call</a>
+      </div>
+    </section>
+
+    <!-- ─── What we do ─────────────────────────────────────────── -->
+    <section aria-labelledby="what-we-do-heading">
+      <div class="container">
+        <p class="section-label" id="what-we-do-heading">What we do</p>
+        <p class="body-text">
+          We document your processes. We build manual SOPs your team owns. We layer AI and automation on top. You keep the capability after we leave.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── Case Study ─────────────────────────────────────────── -->
+    <section aria-labelledby="case-study-heading">
+      <div class="container">
+        <p class="section-label" id="case-study-heading">Case Study 0</p>
+        <div class="case-study-block">
+          <p class="case-label">HBBA Care</p>
+          <p>
+            78% time reduction on care plan documentation. ~0.4 FTE returned per workflow. Fully CQC-compliant.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Contact ────────────────────────────────────────────── -->
+    <section aria-labelledby="contact-heading">
+      <div class="container">
+        <p class="section-label" id="contact-heading">Contact</p>
+        <ul class="contact-list">
+          <li>
+            Email:&nbsp;
+            <a href="mailto:hello@faberx.co">hello@faberx.co</a>
+          </li>
+          <li>
+            Book a call:&nbsp;
+            <a
+              href="https://calendly.com/casey-faberx"
+              target="_blank"
+              rel="noopener noreferrer"
+            >calendly.com/casey-faberx</a>
+          </li>
+        </ul>
+        <div class="contact-cta">
+          <a
+            href="https://calendly.com/casey-faberx"
+            class="btn"
+            aria-label="Book a 15-minute discovery call with Casey Burke"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Book a 15-min call</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ─────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <p class="footer-text">Faberx &middot; faberx.co &middot; Built in Birmingham, UK</p>
+      <p class="footer-text">&copy; 2025 Faberx</p>
+    </div>
+  </footer>
+
+</body>
+</html>
